@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	.clear:after{
+		content: "";
+		display: block;
+		height: 0;
+		clear: both;
+	}
+   .header{
+	   width:800px;
+	   margin:0 auto;
+	   text-align:center;
+	   overflow: hidden;
+    }
+    .small{
+    	float: left;
+    }
+    .middle{
+    	float: right;
+    }
+    .first{
+    	font-size:15px;
+    	color: rgba(73,73,73,1);
+    	height: 30px;
+    }
+    .second {
+    	font-size: 10px;
+    	color: rgba(73,73,73,1);
+    	height: 30px;
+    }
+    .third {
+    	font-size: 10px;
+    	color: rgba(73,73,73,1);
+    	height: 30px;
+    }
+    .second a{
+    	font-size: 14px;
+    }
+    .second a:hover{
+    	color: blue;
+    	text-decoration: underline;
+    }
+    .third a{
+    	font-size: 14px;
+    }
+    .third a:hover{
+    	color: blue;
+    	text-decoration: underline;
+    }
+    .top{
+	   float:right;
+	   overflow: hidden;
+    }
+    .right{
+	   float:left;
+	   margin-top: 16px;
+	   overflow: hidden;
+    }
+    .nav1{
+    	float: left;
+    	width: 400px;
+    	height: 80px;
+        margin-top: 80px;
+    }
+    .nav1 li{
+    	text-align: center;
+    	width: 80px;
+    	line-height: 80px;
+    	height: 80px;
+    	margin-right: 20px;
+    }
+    ul{
+    	list-style-type: none;
+    }
+    a{
+    	color: black;
+    	text-decoration: none;
+    	font-size: 20px;
+    }
+    .nav1 li:hover>a{
+    	color: orange;
+    	text-decoration: underline;
+    	font-size: 20px;
+    }
+    .nav1>ul>li ul{
+    	display: none;
+    	position: absolute;
+    	right:20px;
+    }
+    .nav1>ul>li{
+    	float: left;
+    	position: relative;
+    }
+    .nav1>ul>li:hover ul{
+    	display: block;
+    }
+    
+    .search{
+	    float:left;
+	    width:169px;
+	    font-size: 7px;
+	    padding-top:7px;
+	    padding-bottom:6px;
+	    padding-left:10px;
+	    border:1px solid rgba(0,164,255);
+    }
+    .button{
+	    float:left;
+	    width:40px;
+	    height:10x;
+	    padding-left:7.5px;
+	    padding-right: 7.5px;
+	    padding-top:4px;
+	    padding-bottom: 4px;
+        text-align: center;
+    }
+    .text{
+	    display: inline-block;
+	    width:60px;
+	    height:6px;
+	    margin-top: 22px;
+	    font-size:7px;
+	    font-weight:400;
+	    color:rgba(102,102,102,1);
+    }
+
+    .banner{
+	    width:1200px;
+	    height:350px;
+	    margin:0 auto;
+	    text-align:center;
+	
+    }
+    .banner img{
+	    width:800px;
+	    height:350px;
+	    margin-left: 200px;
+	    margin-right:200px;
+    }
+    .wenzi{
+    	width: 1250px;
+    	height: 70px;
+    	margin:0 auto;
+    	overflow: hidden;
+    }
+    .one{
+    	float: left;
+    	width: 120px;
+    	height: 10px;
+    	font-size: 20px;
+    	font-weight: 400;
+    	color:rgba(73,73,73,1);
+    	
+        margin-left: 8px;
+        margin-bottom: 20px;
+    }
+    .one a{
+    	font-size: 30px;
+    }
+    .one a:hover{
+    	color: blue;
+    	text-decoration: underline;
+    }
+    .two{
+    	float: right;
+    	width: 50x;
+    	height: 10px;
+    	font-size: 11px;
+    	font-weight: 400;
+    	color: rgba(73,73,73,1);
+    	margin-top: 22px;
+        margin-bottom: 20px;
+        margin-right: 20px;
+    }
+    .two a{
+    	font-size: 14px;
+    }
+    .two a:hover{
+    	color:blue;
+    	text-decoration: underline;
+    }
+    .back{
+    	height:1000px;
+    	margin:0 auto;
+    	text-align: center;
+    }
+    .red{
+    	width:1250px;
+    	margin:0 auto;
+    	text-align: center;
+    }
+    .green{
+    	float: left;
+    	position: relative;
+    }
+    .green img{
+    	width: 800px;
+    }
+    .purple{
+    	margin-left: 2px;
+    	display: inline-block;
+    	position: relative;
+        height:471.95px;
+        border-color: #DDDDDD;
+        border:solid 1px;
+    }
+    .purple img{
+    	width:398px;
+    	height: 275px;
+    }
+    .middle1{
+        font-size: 20px;
+    }
+    .small1{
+        font-size: 12px;
+        margin-top: 15px;
+    }
+    .middle2{
+        position: relative;
+        margin-top: 50px;
+    }
+    .middle3{
+        font-size: 20px;
+        margin-top: 10px;
+    }
+    .blue{
+    	margin-top: 4px;
+    	margin-right: 5px;
+    	float: left;
+    	position: relative;
+        border-color: #DDDDDD;
+        border:solid 1px;
+        height:471.95px;
+    }
+    .blue img{
+    	width:396px;
+    	height: 275px;
+    }
+    .orange{
+    	margin-top: 4px;
+    	margin-left: 10px;
+        margin-right: 5px;
+    	float: left;
+    	position: relative;
+        border-color: #DDDDDD;
+        border:solid 1px;
+        height:471.95px;
+    }
+    .orange img{
+    	width:398px;
+    	height:275px;
+    }
+    .gray{
+    	margin-top: 4px;
+    	margin-left: 10px;
+    	float: left;
+    	position: relative;
+        border-color: #DDDDDD;
+        border:solid 1px;
+        height:471.95px;
+    }
+    .gray img{
+    	width:396px;
+    	height: 275px;
+    }
+    .pink{
+    	width: 400px;
+    	height: 73px;
+    	text-align: center;
+    	line-height: 73px;
+    	margin-top: -73px;
+    	position: absolute;
+    	background-color: rgba(0,0,0,0.4);
+    	color: #fff;
+    }
+    .footer{
+    	width: 1200px;
+    	height: 200px;
+    	margin: 0 auto;
+    	background-color: #C0C0C0;
+    }
+    .bottom{
+    	width: 1200px;
+    	margin: 0 auto;
+    	overflow: hidden;
+        height:200px;
+    }
+    .logol{
+    	width: 200px;
+    	float: left;
+    	margin-top: 45px;
+    	text-align: center;
+    	
+    }
+    .logol img{
+    	width: 120px;
+    	height: 120x;
+    }
+    .logoll{
+        width:200px;
+        height:20px;
+        text-align: center;
+        color:black;
+    }
+    .li{
+        margin-top: 10px;
+    }
+    .tab1{
+    	width: 220px;
+    	overflow: hidden;
+    	margin-top: 18px;
+    	float: left;
+        margin-left: 70px;
+    }
+    .tab1 p{
+    	font-size: 12px;
+    }
+    .tab3{
+    	width: 220px;
+    	overflow: hidden;
+    	margin-top: 18px;
+    	float: left;
+        margin-left: 15px;
+    }
+    .tab3 p{
+    	font-size: 12px;
+    }
+    .tab5{
+    	width: 220px;
+    	overflow: hidden;
+    	margin-top: 18px;
+    	float: left;
+        margin-left: 15px;
+    }
+    .tab5 p{
+    	font-size: 12px;
+    }
+    .tab7{
+    	width: 220px;
+    	overflow: hidden;
+    	margin-top: 18px;
+    	float: left;
+        margin-left: 15px;
+    }
+    .tab7 p{
+    	font-size: 12px;
+    }
+    .tab2 a{
+    	font-size: 10PX;
+    	margin-top: 7px;
+    	text-decoration: none;
+    }
+    .tab2 a:hover{
+    	color: orange;
+    	text-decoration: underline;
+    }
+    .more{
+        width:1200px;
+        height:200px;
+    }
+    .button1{
+        width:300px;
+        height:50px;
+        background-color: #70DB93;
+        margin-left: 475px;
+        color:white;
+        border:solid #70DB93;
+        font-size: 17px;
+        margin-top: 60px;
+        position: relative;
+    }
+   
+    .paint{
+        width:1250px;
+        height:250px;
+    }
+    .paint1{
+        width:200px;
+        height:200px;
+        margin-right: 2px;
+    }
+    .paint3{
+        width:200px;
+        height:200px;
+        margin-right: 2px;
+    }
+    .paint4{
+        width:200px;
+        height:200px;
+        margin-right: 2px;
+    }
+    .paint5{
+        width:200px;
+        height:200px;
+        margin-right: 2px;
+    }
+    .paint6{
+        width:200px;
+        height:200px;
+        margin-right: 2px;
+    }
+    .paint2{
+        width:200px;
+        height:200px;
+        margin-left: 4px;
+    }
+    .paints{
+        width: 200px;
+        height: 200px;
+        margin-left: 4px;
+        background-color:#444444;
+        display: none;
+        opacity: 0.5;
+    }
+    .paintss1{
+        width: 200px;
+        height: 200px;
+        margin-right: 2px;
+        background-color:#444444;
+        display: none;
+        opacity: 0.5;
+    }
+    .paintss2{
+        width: 200px;
+        height: 200px;
+        margin-right: 2px;
+        background-color:#444444;
+        display: none;
+        opacity: 0.5;
+    }
+    .paintss3{
+        width: 200px;
+        height: 200px;
+        margin-right: 2px;
+        background-color:#444444;
+        display: none;
+        opacity: 0.5;
+    }
+    .paintss4{
+        width: 200px;
+        height: 200px;
+        margin-right: 2px;
+        background-color:#444444;
+        display: none;
+        opacity: 0.5;
+    }
+    .paintss5{
+        width: 200px;
+        height: 200px;
+        margin-right: 2px;
+        background-color:#444444;
+        display: none;
+        opacity: 0.5;
+    }
+    ul,li{
+        list-style: none;
+    }
+    .box{
+        width: 1200px;
+        height: 500px;
+        border: 1px solid white;
+        margin: 100px auto;
+        position: relative;
+        overflow: hidden;
+    }
+    .slider{
+        width: 8400px;
+        position: absolute;
+        left: -1200px;
+    }
+    .slide{
+        width: 1200px;
+        overflow: hidden;
+        float: left;
+    }
+    .slide img{
+        width:1200px;
+        height:500px;
+    }
+    .box>span{
+        display: block;
+        width: 30px;
+        height: 50px;
+        text-align: center;
+        cursor: pointer;
+        color: #fff;
+        top: 175px;
+        line-height: 50px;
+        background: rgb(255,0,0);
+        font-size: 30px;
+        position: absolute;
+        /* display: none; */
+        opacity: 0;
+    }
+    #left{
+        left: 30px;
+    }
+    #right{
+        right: 30px;
+    }
+    .nav{
+        position: absolute;
+        left: 500px;
+        bottom: 20px;
+    }
+    .nav>li{
+        float: left;
+        width: 20px;
+        height: 20px;
+        background: #ccc;
+        cursor: pointer;
+        margin: 0 10px;
+        border-radius: 50%;
+    }
+    .nav .active{
+        background: red;
+    }
+</style>
+<body>
+	<div class="whole">
+		<div class="small">
+			<span class="first">《版权信息声明》在浏览本网站之前，请仔细阅读本声明</span>
+		</div>
+		<div class="middle">
+			<span class="second"><a href="#">注册</a></span>
+			<span class="third"><a href="#">登录</a></span>
+		</div>
+
+		<div class="header">
+			
+			<div class="nav1">
+				<ul class="clear">
+					<li><a href="#">首页</a></li>
+					<li><a href="#">景区介绍</a></li>
+					<li class="big"><a href="#">历史文化</a>
+						<ul>
+							<li><a href="#">日本文化</a></li>
+							<li><a href="#">樱花文化</a></li>
+						</ul>
+					</li>
+					<li><a href="#">旅游签证</a></li>
+				</ul>
+			</div>
+			<div class="top">
+				<span class="text">个人中心</span>
+				<form class="right">
+					<input class="search" type="text" name="" value="请输入关键字" onfocus="onfocusEvent()" onblur="onblurEvent()"/>
+					<input class="button" type="button" name="" value="搜索" onclick="onclickEvent1()"/>
+				</form>
+			</div>
+		</div>
+		<div class="box" id="box">
+            <div class="slider" id="slider">
+                <div class="slide"><img src="2345截图20201214212758.png" alt=""></div>
+                <div class="slide"><img src="2345截图20201214212940.png" alt=""></div>
+                <div class="slide"><img src="摄图网_501099586_碧海蓝天的三亚湾（非企业商用）.jpg" alt=""></div>
+                <div class="slide"><img src="2345截图20201214212204.png" alt=""></div>
+                <div class="slide"><img src="2345截图20201214212329.png" alt=""></div>
+                <div class="slide"><img src="2345截图20201214212447.png" alt=""></div>
+                <div class="slide"><img src="2345截图20201214212628.png" alt=""></div>
+            </div>
+            <span id="left"><</span>
+            <span id="right">></span>
+            <ul class="nav" id="nav">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+
+        <div class="paint">
+            <a href="http://www.joytraveller.com/halfFree.aspx?id=2" target="-blank">
+                <img  class="paint2" src="img1.png" alt="首页" onmouseover="fun()" onmouseout="fun1()" />
+            </a>
+            <div class="paints">
+            </div>
+            <a href="http://www.joytraveller.com/ticket.aspx?id=91" target="-blank">
+                <img class="paint1" src="img2.png" onmouseover="fun3()" onmouseout="fun2()"/>
+            </a>
+            <div class="paintss1">
+            </div>
+            <a href="http://www.joytraveller.com/halfFree.aspx?id=17" target="-blank">
+                <img class="paint3" src="img3.png" onmouseover="fun4()" onmouseout="fun5()"/>
+            </a>
+            <div class="paintss2">
+            </div>
+            <a href="http://www.joytraveller.com/halfFree.aspx?id=21" target="-blank">
+                <img class="paint4" src="img4.png" onmouseover="fun6()" onmouseout="fun7()"/>
+            </a>
+            <div class="paintss3">
+            </div>
+            <a href="http://www.joytraveller.com/halfFree.aspx?id=110" target="-blank">
+                <img class="paint5" src="img5.png" onmouseover="fun8()" onmouseout="fun9()"/>
+            </a>
+            <div class="paintss4">
+            </div>
+            <a href="http://www.joytraveller.com/custom.aspx" target="-blank">
+                <img class="paint6" src="img6.png" onmouseover="fun10()" onmouseout="fun11()"/>
+            </a>
+            <div class="paintss5">
+            </div>
+        </div>
+		<div class="wenzi">
+			<span class="one"><a href="#">热门线路</a></span>
+			<span class="two"><a href="#">查看全部</a></span>
+		</div>
+		<div class="back">
+			<div class="red">
+				<div class="green">
+					<img src="visa1.png" alt="日本logo"/>
+					
+				</div>
+				<div class="purple">
+					<img src="img1.jpg" alt="三亚logo"/>
+                    <div class="middle2">
+                        <p class="middle1">私人定制</p>
+                        <p class="middle3">邂逅三亚.蓝天白云之旅</p>
+                        <p class="small1">出行日期：全年出团</p>
+                    </div>
+				</div>
+				<div class="blue">
+					<img src="img2.jpg" alt="黄山logo"/>
+                    <div class="middle2">
+                        <p class="middle1">主题旅行</p>
+                        <p class="middle3">人间仙境.茫茫云海之旅</p>
+                        <p class="small1">出行日期：2020年12月8日-2021年01月8日</p>
+                    </div>
+				</div>
+				<div class="orange">
+					<img src="img3.jpg" alt="故宫logo"/>
+                    <div class="middle2">
+                        <p class="middle1">主题旅行</p>
+                        <p class="middle3">古韵故宫.中国文化之旅</p>
+                        <p class="small1">出行日期：2021年01月10日-2021年01月15日</p>
+                    </div>
+				</div>
+				<div class="gray">
+					<img src="img4.jpg" alt="昆明logo"/>
+                    <div class="middle2">
+                        <p class="middle1">主题旅行</p>
+                        <p class="middle3">锦绣春城.梦幻山水之旅</p>
+                        <p class="small1">出行日期：12月-3月</p>
+                    </div>
+				</div>
+			</div>
+		</div>
+        <div class="more">
+            <form>
+                <input class="button1" type="button" name="" value="更多路线"/>
+            </form>
+        </div>
+		<div class="footer">
+			<div class="bottom">
+				<div class="logol">
+					<img src="logo.jpg" alt="樱花logo"/>
+                    <p class="logoll">携程旅游</p>
+				</div>
+				<div class="tab1">
+					<p>常见问题</p>
+					<ul class="tab2">
+						<li class="li"><a href="#">成为签约设计师</a></li>
+                        <li class="li"><a href="#">注册登录</a></li>
+                        <li class="li"><a href="#">账号/密码</a></li>
+                        <li class="li"><a href="#">发票/售后</a></li>
+                        <li class="li"><a href="#">版权投诉</a></li>
+					</ul>
+				</div>
+				<div class="tab3">
+					<p>关于千网图</p>
+					<ul class="tab2">
+						<li class="li"><a href="#">关于我们</a></li>
+						<li class="li"><a href="#">加入我们</a></li>
+						<li class="li"><a href="#">心系千图</a></li>
+						<li class="li"><a href="#">Q群联盟</a></li>
+					</ul>
+				</div>
+				<div class="tab5">
+					<p>产品服务</p>
+					<ul class="tab2">
+						<li class="li"><a href="#">官方博客</a></li>
+						<li class="li"><a href="#">服务中心</a></li>
+					</ul>
+				</div>
+				<div class="tab7">
+					<p>合作伙伴</p>
+					<ul class="tab2">
+						<li class="li"><a href="#">代理商分销</a></li>
+						<li class="li"><a href="#">VIP代购</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		
+	</div>
+    <script type="text/javascript">
+       
+        function onclickEvent1(){
+            timeid=setTimeout(function (){
+                newWindow=open('http://www.baidu.com');
+            },1000);
+        }
+        function onfocusEvent(){
+            document.getElementsByClassName("search")[0].value='';
+        }
+        function onblurEvent(){
+            document.getElementsByClassName("search")[0].value='请输入关键字';
+        }
+        function fun(){
+            var paints=document.getElementsByClassName("paints")[0];
+            var paint=document.getElementsByClassName("paint2")[0];
+            paints.style.marginLeft="4px";
+            paints.style.display="inline-block";
+            paint.style.position="absolute";
+            paints.style.position="relative";
+        }
+        function fun1(){
+            var paints=document.getElementsByClassName("paints")[0];
+            var paint=document.getElementsByClassName("paint2")[0];
+            paints.style.display="none";
+            paint.style.position="";
+        }
+        function fun3(){
+            var painted=document.getElementsByClassName("paint1")[0];
+            var paintss1=document.getElementsByClassName("paintss1")[0];
+            paintss1.style.marginRight="2px";
+            paintss1.style.display="inline-block";
+            painted.style.position="absolute";
+            paintss1.style.position="relative";
+        }
+        function fun2(){
+            var painted=document.getElementsByClassName("paint1")[0];
+            var paintss1=document.getElementsByClassName("paintss1")[0];
+            paintss1.style.display="none";
+            painted.style.position="";
+        }
+        function fun4(){
+            var painted=document.getElementsByClassName("paint3")[0];
+            var paintss2=document.getElementsByClassName("paintss2")[0];
+            paintss2.style.marginRight="2px";
+            paintss2.style.display="inline-block";
+            painted.style.position="absolute";
+            paintss2.style.position="relative";
+        }
+        function fun5(){
+            var painted=document.getElementsByClassName("paint3")[0];
+            var paintss2=document.getElementsByClassName("paintss2")[0];
+            paintss2.style.display="none";
+            painted.style.position="";
+        }
+        function fun6(){
+            var painted=document.getElementsByClassName("paint4")[0];
+            var paintss3=document.getElementsByClassName("paintss3")[0];
+            paintss3.style.marginRight="2px";
+            paintss3.style.display="inline-block";
+            painted.style.position="absolute";
+            paintss3.style.position="relative";
+        }
+        function fun7(){
+            var painted=document.getElementsByClassName("paint4")[0];
+            var paintss2=document.getElementsByClassName("paintss3")[0];
+            paintss2.style.display="none";
+            painted.style.position="";
+        }
+        function fun8(){
+            var painted=document.getElementsByClassName("paint5")[0];
+            var paintss3=document.getElementsByClassName("paintss4")[0];
+            paintss3.style.marginRight="2px";
+            paintss3.style.display="inline-block";
+            painted.style.position="absolute";
+            paintss3.style.position="relative";
+        }
+        function fun9(){
+            var painted=document.getElementsByClassName("paint5")[0];
+            var paintss2=document.getElementsByClassName("paintss4")[0];
+            paintss2.style.display="none";
+            painted.style.position="";
+        }
+        function fun10(){
+            var painted=document.getElementsByClassName("paint6")[0];
+            var paintss3=document.getElementsByClassName("paintss5")[0];
+            paintss3.style.marginRight="2px";
+            paintss3.style.display="inline-block";
+            painted.style.position="absolute";
+            paintss3.style.position="relative";
+        }
+        function fun11(){
+            var painted=document.getElementsByClassName("paint6")[0];
+            var paintss2=document.getElementsByClassName("paintss5")[0];
+            paintss2.style.display="none";
+            painted.style.position="";
+        }
+        var box = document.getElementById('box');
+        var oNavlist = document.getElementById('nav').children;
+        var slider = document.getElementById('slider');
+        var left = document.getElementById('left');
+        var right = document.getElementById('right');
+        var index = 1;
+        var timer;
+        var isMoving = false;
+        box.onmouseover = function(){
+            animate(left,{opacity:50})
+            animate(right,{opacity:50})
+            clearInterval(timer)
+        }
+        box.onmouseout = function(){
+            animate(left,{opacity:0})
+            animate(right,{opacity:0})
+            timer = setInterval(next, 3000);
+        }
+        right.onclick = next;
+        left.onclick = prev;
+        for( var i=0; i<oNavlist.length; i++ ){
+            oNavlist[i].index = i;
+            oNavlist[i].onclick = function(){
+                index = this.index+1;
+                navmove();
+                animate(slider,{left:-1200*index});
+            }
+        }
+        function next(){
+            if(isMoving){
+                return;
+            }
+            isMoving = true;
+            index++;
+            navmove();
+            animate(slider,{left:-1200*index},function(){
+                if(index==6){
+                    slider.style.left = '-1200px';
+                    index = 1;
+                }
+                isMoving = false;
+            });
+        }
+        function prev(){
+            if(isMoving){
+                return;
+            }
+            isMoving = true;
+            index--;
+            navmove();
+            animate(slider,{left:-1200*index},function(){
+                if(index==0){
+                    slider.style.left = '-6000px';
+                    index = 5;
+                }
+                isMoving = false;
+            });
+        }
+        function navmove(){
+            for( var i=0; i<oNavlist.length; i++ ){
+                oNavlist[i].className = "";
+            }
+            if(index >5 ){
+                oNavlist[0].className = "active";
+            }else if(index<=0){
+                oNavlist[4].className = "active";
+            }else {
+                oNavlist[index-1].className = "active";
+            }
+        }
+        timer = setInterval(next, 3000);
+        function getStyle(obj, attr){
+    if(obj.currentStyle){
+        return obj.currentStyle[attr];
+    } else {
+        return getComputedStyle(obj, null)[attr];
+    }
+}
+function animate(obj,json,callback){
+    clearInterval(obj.timer);
+    obj.timer = setInterval(function(){
+        var isStop = true;
+        for(var attr in json){
+            var now = 0;
+            if(attr == 'opacity'){
+                now = parseInt(getStyle(obj,attr)*100);
+            }else{
+                now = parseInt(getStyle(obj,attr));
+            }
+            var speed = (json[attr] - now) / 8;
+            speed = speed>0?Math.ceil(speed):Math.floor(speed);
+            var cur = now + speed;
+            if(attr == 'opacity'){
+                obj.style[attr] = cur / 100;
+            }else{
+                obj.style[attr] = cur + 'px';
+            }
+            if(json[attr] !== cur){
+                isStop = false;
+            }
+        }
+        if(isStop){
+            clearInterval(obj.timer);
+            callback&&callback();
+        }
+    }, 30)
+}
+
+    </script>
+</body>
+</html>
